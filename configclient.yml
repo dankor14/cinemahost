@@ -1,35 +1,20 @@
 spring:
   jpa:
-   hibernate:
-     ddl-auto: update
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.Oracle10gDialect
   datasource:
-     url: jdbc:oracle:thin:@localhost:1521:system
-     username: Catalogo
-     password: catalogo
-     driver-class-name: oracle.jdbc.driver.OracleDriver
-  security:
-     user:
-        name: root
-        password: s3cr3t
+    url: jdbc:oracle:thin:@localhost:1521:system
+    username: CATALOGO
+    password: catalogo
+    driver-class-name: oracle.jdbc.driver.OracleDriver
   application:
-     name: configclient
-  profiles:
-     active: development
-  cloud:
-     config:
-        uri: http://localhost:8888
-        username: root
-        password: s3cr3t
+    name: configclient
 server:
- port: 8081
-logging:
-  level:
-     org:
-        hibernate:
-           SQL: debug
+  port: 8081
 eureka:
- client:
-   serviceUrl:
-     defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
- instance:
-preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
