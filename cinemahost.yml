@@ -9,7 +9,7 @@ spring:
     password: catalogo
     driver-class-name: oracle.jdbc.driver.OracleDriver
   application:
-    name: configclient
+    name: cinemahost
 server:
   port: 8081
 eureka:
